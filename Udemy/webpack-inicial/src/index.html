@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPack</title>
+</head>
+<body>
+    <h1>Soy un H1</h1>
+    <img src="assets/img/webpack-logo.png" alt="Soy una imagen">
+    <!-- Webpack es un ampaquetador de modulos-->
+    <!-- Webpack sirve para:
+        -   Gestionar dependencias como MAVEN
+        -   Cargar modulos o dividir la aplicacion en diferentes partes y llamarlas entre si como los IMPORTS
+        -   Codificar en versiones nuevas y que webpack las pase a una version con la maxima compatibilidad
+        -   Tareas automaticas como el live server,
+        -   Minimizar codigo automaticamente 
+        -   Ofuscar o hacer menos legible
+        -   Montar servidores de desarrollo y pruebas
+        -   Incrementar la compatibilidad con navegadores por medio de BABEL
+        -   NPM es como MAVEN central y es usado por WEBPACK
+        -   Compilar SASS a CSS
+        -   Compilar TS a JS<-->
+
+        <!-- Crear proyecto con webpack -->
+        <!-- NOTA: es necesario tener Node instalado y poder ver las versiones, node --version y npm --version-->
+        <!--    En la terminal dentro de la carpeta que vamos a utilizar  
+                Ejecutamos npm init
+                    Ingresamos el nombre del paquete
+                    la version
+                    descripcion
+                    el punto entrada
+                    comandos de pruebas
+                    el repositorio de git
+                    keywords 
+                    author
+                    licencia
+                    y confirmamos
+                Entonces se crea el archivo package.json
+                La carpeta src es la carpeta por defecto para buscar el index.html
+                Ejecutamos npm install webpack-cli --save-dev (Para integrar webpack al proyecto), se crea la carpeta node_modules
+                Agregamos "build": "webpack --config webpack.config.js" al nodo "scripts" en package.json para poder ejecutar un comando para construir un js minimizado
+                Ejecutamos npm run build y generamos la carpeta dist con un js minimizado-->
+
+        <!-- REACT y ANGULAR ya cuentan con WEBPACK -->
+        <!-- HTML Loader 
+            Nos ayuda a configurar el html de salida en /dist1
+                Instalacion 
+                    npm install --save-dev html-loader
+                    npm install --save-dev html-webpack-plugin
+                Agregar las configuraciones en webpack.config.js-->
+        <!-- DEV SERVER
+            Nos ayuda a correr la app desde un servidor embebido que actualiza los cambios que hagamos en automatico al guardar
+                Instalacion
+                    npm install --save-dev webpack-dev-server
+                Ejecucion
+                    Agregar a package.json el comando "start": "webpack serve --config webpack.config.js --open --port=8080" en "scripts" 
+                    Ejecutar npm run start-->
+        <!-- STYLE LOADER 
+                Nos ayuda a cargar los estilos css a el js final minimizado, en vez de usar css usamos propiedades css en js
+                Instalacion
+                    npm install --save-dev css-loader style-loader
+                Se deben de agregar unas reglas para los css en webpack.config.js-->
+        <!-- ESTILOS DE FORMA GLOBAL 
+                Nos ayuda a establecer estilos globales
+                Instalacion
+                    npm install --save-dev mini-css-extract-plugin-->
+        <!-- FILE LOADER
+                Nos ayuda a cargar imagenes en el proyecto final 
+                Instalacion
+                    npm install file-loader --save-dev
+                Configuramos el loader en las reglas de webpack.config.js-->
+        <!--COPY WEBPACK PLUGIN
+                Noa ayuda a copiar elementos estaticos como las imagenes, 
+                se pasan  de el proyecto general al de distribucion, esto pasa si no estamos usando el file loader  
+                Instalacion
+                    npm install copy-webpack-plugin --save-dev  -->
+        <!-- Minimizar Css solo para produccion
+                Instalacion
+                    npm i -D css-minimizer-webpack-plugin terser-webpack-plugin -->
+        <!-- BABEL
+            Hace nuestro codigo compatible con navegadores antiguos, pasa de un ECMA nuevo a unos mas viejo
+            Instalacion 
+               npm install --save-dev o -D babel-loader @babel/core
+               npm install @babel/preset-env --save -dev
+               Se crea el archivo babel.config.json
+               Se agregan las reglas al modulo en el webpack.js 
+         -->
+                
+</body>
+</html>
