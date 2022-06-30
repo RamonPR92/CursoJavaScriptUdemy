@@ -8,7 +8,8 @@ module.exports = {
     mode: 'development', //production es el valor pot default y hace que el main.js aparezca minimizado, en development no aparece minimizado
     output:{
         //Elimina los archivos generados cuando se ejecuta el build
-        clean: true
+        clean: true,
+        filename: 'main.[fullhash].js'//Para produccion 
     },
     module: {
         rules: [
@@ -26,7 +27,7 @@ module.exports = {
 
             },
             {//Confiiguracion para estilos globales de css
-                test: /style.css$/,//Si se encuentra este archivo exactamente pasa a la siguiente linea 
+                test: /styles.css$/,//Si se encuentra este archivo exactamente pasa a la siguiente linea 
                 use: [miniCssExtractPlugin.loader, 'css-loader']    
             } 
             // {
@@ -47,7 +48,7 @@ module.exports = {
         new miniCssExtractPlugin({
             //nombre del archivo final de estilos, 
             //fullhash funciona para cambiar el nombre con un hash al archivo y evitar que el nombre se guarde en cache
-            filename: '[name].css', 
+            filename: '[name].[hash].css', 
             ignoreOrder: false
         }), 
         // new copyPlugin({
